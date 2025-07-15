@@ -14,7 +14,6 @@ export const LiftStateUp = () => {
 
 //Child 1 Component
 const InputComponent = ({ setInputValue, inputValue }) => {
-
     return (
         <>
             <input type="text" placeholder='enter your name' value={inputValue} onChange={(e) => setInputValue(e.target.value)}></input>
