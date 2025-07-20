@@ -59,9 +59,7 @@ header h1 {
   font-weight: 900;
   letter-spacing: 0.12em;
   margin-bottom: 0.4rem;
-  text-shadow:
-    0 0 1px var(--accent-color),
-    0 0 5px rgba(0, 188, 212, 0.6);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 8px var(--accent-color);
   animation: fadeInDown 0.8s ease forwards;
 }
 
@@ -83,8 +81,7 @@ header h1 {
   margin-bottom: 3rem;
   border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
   animation: fadeIn 1s ease forwards;
   opacity: 0;
 }
@@ -96,12 +93,11 @@ header h1 {
   border: none;
   background: #f5f7fa;
   color: #1a1a1a;
-  transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
   font-weight: 600;
-  box-shadow:
-    inset 0 0 10px #d0e7ea;
+  box-shadow: inset 0 0 10px #d0e7ea;
   user-select: text;
 }
 
@@ -113,8 +109,7 @@ header h1 {
 .todo-input:focus {
   outline: none;
   background: #e0f7fa;
-  box-shadow:
-    inset 0 0 14px var(--accent-color);
+  box-shadow: inset 0 0 14px var(--accent-color);
 }
 
 .todo-btn {
@@ -126,8 +121,7 @@ header h1 {
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
   cursor: pointer;
-  box-shadow:
-    0 8px 20px rgba(0, 188, 212, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.5);
   transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.25s ease;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -135,10 +129,9 @@ header h1 {
 }
 
 .todo-btn:hover,
-.todo-btn:focus {
+.todo-btn:focus-visible {
   background: linear-gradient(135deg, var(--accent-hover), #008ba3);
-  box-shadow:
-    0 12px 24px rgba(0, 155, 191, 0.85);
+  box-shadow: 0 12px 24px rgba(0, 155, 191, 0.85);
   transform: scale(1.1);
   outline: none;
 }
@@ -157,6 +150,7 @@ ul {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--blur));
   -webkit-backdrop-filter: blur(var(--blur));
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
   margin: 1.2rem 0;
   padding: 1.5rem 2rem;
@@ -165,28 +159,30 @@ ul {
   gap: 1.5rem;
   width: 100%;
   max-width: 650px;
-  box-shadow:
-    0 12px 36px rgba(0, 0, 0, 0.7),
-    inset 0 0 40px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7), inset 0 0 40px rgba(255, 255, 255, 0.12);
   color: #fff;
   font-size: clamp(1.3rem, 2vw, 1.5rem);
   align-items: center;
-  transition: background-color 0.35s ease;
-  animation: fadeIn 0.7s ease forwards;
+  transition: background-color 0.35s ease, transform 0.3s ease;
+  animation: slideInUp 0.7s ease forwards;
   opacity: 0;
 }
 
 .todo-item:hover {
   background: rgba(255, 255, 255, 0.25);
-  box-shadow:
-    0 16px 45px rgba(0, 0, 0, 0.85),
-    inset 0 0 50px rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), inset 0 0 50px rgba(255, 255, 255, 0.18);
+  transform: scale(1.01);
 }
 
 .todo-item span {
   word-wrap: break-word;
   padding: 0.3rem 0;
   user-select: text;
+  transition: text-shadow 0.3s ease;
+}
+
+.todo-item span:hover {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
 }
 
 .check-btn,
@@ -201,7 +197,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color var(--transition-speed) ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color var(--transition-speed), transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   user-select: none;
 }
@@ -212,7 +208,7 @@ ul {
 }
 
 .check-btn:hover,
-.check-btn:focus {
+.check-btn:focus-visible {
   background-color: var(--success-hover);
   transform: scale(1.15);
   outline: none;
@@ -225,7 +221,7 @@ ul {
 }
 
 .delete-btn:hover,
-.delete-btn:focus {
+.delete-btn:focus-visible {
   background-color: var(--danger-hover);
   transform: scale(1.15);
   outline: none;
@@ -249,7 +245,7 @@ ul {
 }
 
 .clear-btn:hover,
-.clear-btn:focus {
+.clear-btn:focus-visible {
   background: linear-gradient(135deg, var(--danger-hover), #b71c1c);
   box-shadow: 0 16px 38px rgba(183, 28, 28, 0.85);
   transform: scale(1.1);
@@ -270,11 +266,12 @@ ul {
 
 @media (max-width: 700px) {
   .todo-container {
-    padding: 3rem 1.5rem 2rem;
+    padding: 2rem 1rem;
   }
 
   .form form {
     flex-direction: column;
+    gap: 0.5rem;
   }
 
   .todo-input {
@@ -294,6 +291,7 @@ ul {
     grid-template-columns: 1fr auto;
     gap: 1rem;
     padding: 1.2rem 1.5rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -319,6 +317,17 @@ ul {
   from {
     opacity: 0;
     transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
