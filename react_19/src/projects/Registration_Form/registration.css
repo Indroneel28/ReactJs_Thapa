@@ -1,0 +1,96 @@
+/* registration.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f8;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 40px;
+  max-width: 500px;
+  margin: 50px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+p {
+  text-align: center;
+  color: #666;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="phone"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+
+  /* Ensure text is visible */
+  color: #333;
+  background-color: #fff;
+}
+
+input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: dodgerblue;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.clearfix {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.summary {
+  font-size: 18px;
+  color: #444;
+}
+
+.summary span {
+  font-weight: bold;
+  color: #007BFF;
+}
