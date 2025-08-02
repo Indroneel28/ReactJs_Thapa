@@ -15,26 +15,19 @@ import UseEffectChallenge from './components/hooks/useEffect/useEffectChallenge.
 import { CleanUp } from './components/hooks/useEffect/CleanUp.jsx';
 import HowNotToFetchApi from './components/hooks/useEffect/HowNotToFetchApi.jsx';
 import HowToFetchApi from './components/hooks/useEffect/HowToFetchApi.jsx';
+import UseRef from './components/hooks/useRef/index.jsx';
+import { ForwardRefs } from './components/hooks/useRef/ForwardRef.jsx';
+import { UseId } from './components/hooks/useId/index.jsx';
+import { ParentComponent } from './components/PropDrilling.jsx';
+import { BioProvider } from './components/hooks/contextAPI/index.jsx';
+import { Home } from './components/hooks/contextAPI/Home.jsx';
 
 const App = () => {
   return (
-    <section>
-      {/* <h1 className='common-heading'>List of Best Netflix Series</h1>
-      <NetflixSeries /> */}
-      {/* <Todo/> */}
-      {/* <Challenge/> */}
-      {/* <Registration/> */}
-      {/* <Registration_Profesional/> */}
-      {/* <LoginForm/> */}
-      {/* <ContactForm/> */}
-      {/* <ReactUseEffect/>
-      <ReactUseEffectDate/> */}
-      {/* <UseEffectChallenge/> */}
-      {/* <CleanUp/> */}
-      {/* <HowNotToFetchApi/> */}
-      <HowToFetchApi/>
-    </section>
-  )
-}
+    <BioProvider>
+      <Home />
+    </BioProvider>
+  );
+};
 
 export default App
