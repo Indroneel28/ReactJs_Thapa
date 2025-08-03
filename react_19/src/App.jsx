@@ -21,12 +21,17 @@ import { UseId } from './components/hooks/useId/index.jsx';
 import { ParentComponent } from './components/PropDrilling.jsx';
 import { BioProvider } from './components/hooks/contextAPI/index.jsx';
 import { Home } from './components/hooks/contextAPI/Home.jsx';
+import { ThemeProvider } from 'styled-components';
+import { DarkLight } from './components/hooks/contextAPI/DarkLight.jsx';
 
 const App = () => {
   return (
-    <BioProvider>
-      <Home />
-    </BioProvider>
+    // <BioProvider>
+    //   <Home />
+    // </BioProvider>
+    <ThemeProvider>
+      <DarkLight/>
+    </ThemeProvider>
   );
 };
 
